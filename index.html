@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90vw;
+        background-color: rgb(171, 152, 152);
+        
+    }
+    .booklist{
+        height: 47vh;
+        width: 31%;
+    
+        background-color: rgb(171, 152, 152);
+        
+    }
+    @media only screen and (max-width:600px) {
+        .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 99vw;
+    
+        background-color: rgb(242, 243, 243);
+        
+    }
+    .booklists{
+        height: 60%;
+        width: 99%;
+        margin-top: 10%;
+        background-color: rgb(252, 252, 252);
+        
+    }
+    }
+    
+</style>
+<body>
+    <h1>OLMS</h1>
+    <div class="main">
+        <div class="lists">
+            <h3>Book List :</h3>
+            <p>
+                <ol>
+                 <li>Hacking <br>
+                    Author : Muhammad Umair <br>
+                ISBN : 1234-56778 </li> 
+            </p>
+            
+            <p>
+            
+                    <li> Python <br>
+                    Author : Umair <br>
+                ISBN : 789-098756 </li> 
+            
+            </p>
+            <p>
+                <li> Data Analytics <br>
+                    Author : Khan Gul <br>
+                ISBN : 277-987 </li> 
+            
+            </p>
+                </ol>
+                    
+
+        </div>
+        <div class="booklist">
+            <h3>Add New Book :</h3>
+            <form action="">
+                <input type="text" placeholder="Title" id="title"><br><br>
+                <input type="text" placeholder="Author" id="author"><br><br>
+                <input type="number" placeholder="ISBN" id="isbn"><br><br>
+                <p id="ton"></p>
+                <button type="button" id="butt" onclick="Add_book()"><b>Add</b></button>
+                
+            </form>
+
+        </div>
+        <div class="booklist">
+            <h3>Search Book :</h3>
+            <input type="text" placeholder="Enter A Book Name" id="ent">
+            <p id="sear"></p>
+            <button type="button" id="sbutt" onclick="Book_search()"><b>Search</b></button>
+
+        </div>
+    </div>
+    <script>
+        let ISBN=[100,300,200];
+        function Add_book(){
+            let title=["Hacking","python","Data Analytics"];
+            
+            let U;
+            let f=false;
+            let h=document.getElementById('ISBN').value;
+            for(let i=0;i<isbn.length;i++){
+                if(x==isbn[i]){
+                    document.getElementById('ton').innerHTML="Already Available";
+                    f=false;
+                    break;
+                }
+                else{
+                    f=true;
+    
+                }
+    
+            }
+            if(t==true){
+                
+                isbn.push(h);
+                document.getElementById('ton').innerHTML=" Book has been added " ;
+            }
+             
+    
+        }
+        function Book_search(){
+            let title=["Hacking","Python","Data Analytics"];
+            let cases=document.getElementById('ent').value;
+            switch(cases){
+                case "Hacking":
+                    document.getElementById('sear').innerHTML="Title : Hacking : TMuhammad Umair ISBN : 1234-56778";
+                break;
+                
+                case "Python":
+                    document.getElementById('sear').innerHTML="Title : Python  Author : Umair  ISBN : 789-098756";
+    
+                break;
+                case "Data Analytics":
+                    document.getElementById('sear').innerHTML="Title Data Analytics   Author: Khan Gul: ISBN:277-987";
+                break;
+                
+                
+                }
+    
+        }
+    </script>  
+</body>
+</html>
